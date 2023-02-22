@@ -53,7 +53,7 @@ int search(vector<int> &arr, int target) {
 }
 
 int main() {
-  vector<int> arr{5, 1, 3};
+   
   cout << search(arr, 3);
 
   return 0;
