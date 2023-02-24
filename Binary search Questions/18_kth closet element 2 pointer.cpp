@@ -1,6 +1,4 @@
-// Unbounded will be similar just in that we wont have i< size() condition as
-// its infifite array.
-
+// https://leetcode.com/problems/find-k-closest-elements/submissions/903965779/
 #include <iostream>
 #include <vector>
 
