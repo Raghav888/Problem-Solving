@@ -1,4 +1,4 @@
-
+// https://www.spoj.com/problems/EKO/
 #include <iostream>
 #include <numeric>
 #include <vector>
