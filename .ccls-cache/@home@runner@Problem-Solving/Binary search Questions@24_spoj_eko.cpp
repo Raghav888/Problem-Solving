@@ -1,4 +1,3 @@
-// https://www.spoj.com/problems/PRATA/
 
 #include <iostream>
 #include <numeric>
@@ -8,28 +7,23 @@ using namespace std;
 
 bool possibleSolution(vector<int> arr, int m, int mid) {
 
-  int count = 0;
-
+  int sum = 0;
+  int temp;
   for (int i = 0; i < arr.size(); i++) {
-    int sum = 0;
-    int count_2 = 1;
-    while ((sum + (arr[i] * count_2)) <= mid) {
-      sum = sum + (arr[i] * count_2);
-      count_2++;
-      count++;
-    }
+    temp = arr[i] - mid;
+    sum += temp >= 0 ? temp : 0;
   }
 
-  if (count >= m) {
+  if (sum >= m) {
     return true;
   }
   return false;
 }
 
-int rotiSpoj(vector<int> arr, int m) {
+int spojEko(vector<int> arr, int m) {
 
-  int start = 0;
-  int end = 1e8;
+  int start = m;
+  int end = accumulate(arr.begin(), arr.end(), 0);
   int mid;
   int ans = -1;
 
@@ -38,9 +32,9 @@ int rotiSpoj(vector<int> arr, int m) {
 
     if (possibleSolution(arr, m, mid)) {
       ans = mid;
-      end = mid - 1;
-    } else {
       start = mid + 1;
+    } else {
+      end = mid - 1;
     }
   }
 
@@ -49,9 +43,9 @@ int rotiSpoj(vector<int> arr, int m) {
 
 int main() {
 
-  vector<int> arr{1, 1, 1, 1, 1, 1, 1, 1};
-  int m = 8;
+  vector<int> arr{4, 42, 40, 26, 46};
+  int m = 20;
 
-  cout << rotiSpoj(arr, m);
+  cout << spojEko(arr, m);
   return 0;
 }
