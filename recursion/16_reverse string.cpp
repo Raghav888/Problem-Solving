@@ -1,6 +1,3 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
 #include <iostream>
 
 using namespace std;
