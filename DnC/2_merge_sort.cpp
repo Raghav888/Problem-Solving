@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// TC ll be O(nlogn)
+
 void merge(vector<int> &arr1, int start, int end)
 {
 
