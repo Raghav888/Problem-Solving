@@ -3,12 +3,16 @@
 
 using namespace std;
 
+// TC Best Case O(nlogn)
+// TC worst case O(n^2) when array is sorted reversly.
+
 int partition(vector<int> &arr, int start, int end)
 {
     // pivot ll be 1st element
     int pivotIndex = start;
     int pivot = arr[pivotIndex];
     int count = 0;
+
 // get number of element less than pivot
     for (int i = start + 1; i <= end; i++)
     {
@@ -30,7 +34,7 @@ int partition(vector<int> &arr, int start, int end)
     while (i < pivotIndex && j > pivotIndex)
     {
 
-        while (arr[i] < arr[pivotIndex])
+        while (arr[i] <= arr[pivotIndex])
         {
             i++;
         }
